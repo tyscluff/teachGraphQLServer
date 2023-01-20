@@ -1,12 +1,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import schema from './graphql/schema';
+import schema from './graphql/schema.js';
 import { graphqlHTTP } from 'express-graphql';
 
 const app = express();
 
-// mongoose.connect("mongodb+srv://tyscluffeassist:av8JejGBFtOEr0NP@cluster0.5upbv.mongodb.net/pdfGenerator?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://tyscluffeassist:av8JejGBFtOEr0NP@cluster0.5upbv.mongodb.net/pdfGenerator?retryWrites=true&w=majority");
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => {
